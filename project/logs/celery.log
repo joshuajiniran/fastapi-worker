@@ -1,0 +1,8 @@
+[2021-10-05 13:27:56,794: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:27:56,804: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:27:57,828: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:27:57,886: INFO/MainProcess] celery@4e86b2a0c404 ready.
+[2021-10-05 13:29:41,041: INFO/MainProcess] Received task: create_task[c20b6bd9-7e8a-45dc-8b44-0daa3c817928]  
+[2021-10-05 13:30:01,082: INFO/ForkPoolWorker-1] Task create_task[c20b6bd9-7e8a-45dc-8b44-0daa3c817928] succeeded in 20.03910555600305s: True
+[2021-10-05 13:30:11,366: INFO/MainProcess] Received task: create_task[f41d3b6d-aa4b-4e2f-acc8-09e9982788f4]  
+[2021-10-05 13:30:41,399: INFO/ForkPoolWorker-1] Task create_task[f41d3b6d-aa4b-4e2f-acc8-09e9982788f4] succeeded in 30.02842434500053s: True

@@ -1,6 +1,6 @@
 // custom javascript
 
-(function() {
+(function () {
   console.log('Sanity Check!');
 })();
 
@@ -12,10 +12,10 @@ function handleClick(type) {
     },
     body: JSON.stringify({ type: type }),
   })
-  .then(response => response.json())
-  .then(data => {
-    getStatus(data.task_id)
-  })
+    .then(response => response.json())
+    .then(data => {
+      getStatus(data.task_id)
+    })
 }
 
 function getStatus(taskID) {
@@ -25,23 +25,23 @@ function getStatus(taskID) {
       'Content-Type': 'application/json'
     },
   })
-  .then(response => response.json())
-  .then(res => {
-    console.log(res)
-    const html = `
+    .then(response => response.json())
+    .then(res => {
+      console.log(res)
+      const html = `
       <tr>
-        <td>${taskID}</td>
+        <td>${res.task_id}</td>
         <td>${res.task_status}</td>
         <td>${res.task_result}</td>
       </tr>`;
-    const newRow = document.getElementById('tasks').insertRow(0);
-    newRow.innerHTML = html;
+      const newRow = document.getElementById('tasks').insertRow(0);
+      newRow.innerHTML = html;
 
-    const taskStatus = res.task_status;
-    if (taskStatus === 'SUCCESS' || taskStatus === 'FAILURE') return false;
-    setTimeout(function() {
-      getStatus(res.task_id);
-    }, 1000);
-  })
-  .catch(err => console.log(err));
+      const taskStatus = res.task_status;
+      if (taskStatus === 'SUCCESS' || taskStatus === 'FAILURE') return false;
+      setTimeout(function () {
+        getStatus(res.task_id);
+      }, 1000);
+    })
+    .catch(err => console.log(err));
 }
