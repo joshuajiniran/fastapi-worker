@@ -6,3 +6,115 @@
 [2021-10-05 13:30:01,082: INFO/ForkPoolWorker-1] Task create_task[c20b6bd9-7e8a-45dc-8b44-0daa3c817928] succeeded in 20.03910555600305s: True
 [2021-10-05 13:30:11,366: INFO/MainProcess] Received task: create_task[f41d3b6d-aa4b-4e2f-acc8-09e9982788f4]  
 [2021-10-05 13:30:41,399: INFO/ForkPoolWorker-1] Task create_task[f41d3b6d-aa4b-4e2f-acc8-09e9982788f4] succeeded in 30.02842434500053s: True
+[2021-10-05 13:48:14,319: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:48:14,349: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:48:15,384: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:48:15,400: INFO/MainProcess] celery@9a35b2903433 ready.
+[2021-10-05 13:48:27,269: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/usr/local/lib/python3.9/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/usr/local/lib/python3.9/site-packages/celery/worker/consumer/consumer.py", line 599, in start
+    c.loop(*c.loop_args())
+  File "/usr/local/lib/python3.9/site-packages/celery/worker/loops.py", line 83, in asynloop
+    next(loop)
+  File "/usr/local/lib/python3.9/site-packages/kombu/asynchronous/hub.py", line 364, in create_loop
+    cb(*cbargs)
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 1083, in on_readable
+    self.cycle.on_readable(fileno)
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 354, in on_readable
+    chan.handlers[type]()
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 688, in _receive
+    ret.append(self._receive_one(c))
+  File "/usr/local/lib/python3.9/site-packages/kombu/transport/redis.py", line 698, in _receive_one
+    response = c.parse_response()
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 3505, in parse_response
+    response = self._execute(conn, conn.read_response)
+  File "/usr/local/lib/python3.9/site-packages/redis/client.py", line 3479, in _execute
+    return command(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 739, in read_response
+    response = self._parser.read_response()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 324, in read_response
+    raw = self._buffer.readline()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 256, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.9/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+[2021-10-05 13:48:27,305: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 2.00 seconds... (1/100)
+
+[2021-10-05 13:48:29,571: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error -2 connecting to redis:6379. Name or service not known..
+Trying again in 4.00 seconds... (2/100)
+
+[2021-10-05 13:48:33,582: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:48:33,603: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:48:34,617: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:48:57,351: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:48:57,361: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:48:58,385: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:48:58,431: INFO/MainProcess] celery@88f625ffa8c8 ready.
+[2021-10-05 13:52:56,141: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:52:56,150: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:52:57,576: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:52:57,647: INFO/MainProcess] celery@12884fb91201 ready.
+[2021-10-05 13:53:07,276: INFO/MainProcess] Events of group {task} enabled by remote.
+[2021-10-05 13:55:13,438: INFO/MainProcess] Received task: create_task[5510609d-2959-46e0-9e9b-7d92c6201f18]  
+[2021-10-05 13:55:33,491: INFO/ForkPoolWorker-1] Task create_task[5510609d-2959-46e0-9e9b-7d92c6201f18] succeeded in 20.049381088996597s: True
+[2021-10-05 13:55:57,049: INFO/MainProcess] Received task: create_task[ea1801dd-f47a-48d1-a4c9-13750424849e]  
+[2021-10-05 13:55:57,610: INFO/MainProcess] Received task: create_task[919ceedb-0f89-4271-8a84-30e145d2bd83]  
+[2021-10-05 13:55:58,532: INFO/MainProcess] Received task: create_task[15575546-4c86-49af-89eb-1533ea7b04a6]  
+[2021-10-05 13:56:08,556: INFO/ForkPoolWorker-2] Task create_task[15575546-4c86-49af-89eb-1533ea7b04a6] succeeded in 10.014946180999686s: True
+[2021-10-05 13:56:17,627: INFO/ForkPoolWorker-3] Task create_task[919ceedb-0f89-4271-8a84-30e145d2bd83] succeeded in 20.010828757003765s: True
+[2021-10-05 13:56:27,085: INFO/ForkPoolWorker-1] Task create_task[ea1801dd-f47a-48d1-a4c9-13750424849e] succeeded in 30.030552782001905s: True
+[2021-10-05 13:57:31,411: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:57:31,426: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:57:32,450: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:57:32,486: INFO/MainProcess] celery@a8fd74d56a06 ready.
+[2021-10-05 13:57:37,271: INFO/MainProcess] Events of group {task} enabled by remote.
+[2021-10-05 13:59:00,043: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:59:00,054: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:59:01,076: INFO/MainProcess] mingle: all alone
+[2021-10-05 13:59:01,098: INFO/MainProcess] celery@2a2a79fdc3cb ready.
+[2021-10-05 13:59:02,273: INFO/MainProcess] Events of group {task} enabled by remote.
+[2021-10-05 13:59:11,536: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:59:11,554: INFO/MainProcess] Connected to redis://redis:6379/0
+[2021-10-05 13:59:11,756: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:59:11,758: INFO/MainProcess] mingle: searching for neighbors
+[2021-10-05 13:59:11,965: INFO/MainProcess] sync with celery@1d90bd3b6702
+[2021-10-05 13:59:12,042: INFO/MainProcess] sync with celery@333e0fc270c8
+[2021-10-05 13:59:13,061: INFO/MainProcess] mingle: sync with 1 nodes
+[2021-10-05 13:59:13,062: INFO/MainProcess] mingle: sync complete
+[2021-10-05 13:59:13,071: INFO/MainProcess] mingle: sync with 1 nodes
+[2021-10-05 13:59:13,072: INFO/MainProcess] mingle: sync complete
+[2021-10-05 13:59:13,149: INFO/MainProcess] celery@1d90bd3b6702 ready.
+[2021-10-05 13:59:13,156: INFO/MainProcess] celery@333e0fc270c8 ready.
+[2021-10-05 13:59:23,220: INFO/MainProcess] Events of group {task} enabled by remote.
+[2021-10-05 13:59:23,220: INFO/MainProcess] Events of group {task} enabled by remote.
+[2021-10-05 13:59:27,652: INFO/MainProcess] Received task: create_task[64374387-8f64-4c17-918e-daccc4a70eda]  
+[2021-10-05 13:59:28,104: INFO/MainProcess] Received task: create_task[339475fe-969d-477f-aa41-1ea314f65635]  
+[2021-10-05 13:59:28,753: INFO/MainProcess] Received task: create_task[72794b60-83a0-4979-a172-cb82624c49d4]  
+[2021-10-05 13:59:29,392: INFO/MainProcess] Received task: create_task[4b5ae36e-b764-4c23-8b0a-7099dcafa5c1]  
+[2021-10-05 13:59:29,824: INFO/MainProcess] Received task: create_task[65882c6e-a55f-4915-9317-1f77fa82ae7d]  
+[2021-10-05 13:59:30,955: INFO/MainProcess] Received task: create_task[16bfccfe-4bdf-4936-a0df-8b180570f828]  
+[2021-10-05 13:59:31,591: INFO/MainProcess] Received task: create_task[1182528e-3938-41e3-8a8f-846bca8494c8]  
+[2021-10-05 13:59:31,942: INFO/MainProcess] Received task: create_task[06acb003-2202-472f-853b-c05aa153986b]  
+[2021-10-05 13:59:32,318: INFO/MainProcess] Received task: create_task[0284793e-06f1-45d1-9251-c11c11b2c133]  
+[2021-10-05 13:59:32,696: INFO/MainProcess] Received task: create_task[68ce03be-6897-4215-9c54-a81d37b753c8]  
+[2021-10-05 13:59:33,084: INFO/MainProcess] Received task: create_task[e7c96e92-ef22-4d1b-a8b0-137c3b67b2f7]  
+[2021-10-05 13:59:33,404: INFO/MainProcess] Received task: create_task[065828a2-d104-4058-8a34-15f93ab5b513]  
+[2021-10-05 13:59:33,784: INFO/MainProcess] Received task: create_task[b7b8b007-1346-4bcb-91d7-0120f3abcf34]  
+[2021-10-05 13:59:37,676: INFO/ForkPoolWorker-1] Task create_task[64374387-8f64-4c17-918e-daccc4a70eda] succeeded in 10.018896838999353s: True
+[2021-10-05 13:59:38,775: INFO/ForkPoolWorker-3] Task create_task[72794b60-83a0-4979-a172-cb82624c49d4] succeeded in 10.015633011003956s: True
+[2021-10-05 13:59:41,614: INFO/ForkPoolWorker-2] Task create_task[1182528e-3938-41e3-8a8f-846bca8494c8] succeeded in 10.014305087002867s: True
+[2021-10-05 13:59:48,139: INFO/ForkPoolWorker-1] Task create_task[339475fe-969d-477f-aa41-1ea314f65635] succeeded in 20.030136648994812s: True
+[2021-10-05 13:59:48,791: INFO/ForkPoolWorker-3] Task create_task[e7c96e92-ef22-4d1b-a8b0-137c3b67b2f7] succeeded in 10.009680182003649s: True
+[2021-10-05 13:59:49,881: INFO/ForkPoolWorker-3] Task create_task[65882c6e-a55f-4915-9317-1f77fa82ae7d] succeeded in 20.045205712995084s: True
+[2021-10-05 13:59:51,974: INFO/ForkPoolWorker-2] Task create_task[06acb003-2202-472f-853b-c05aa153986b] succeeded in 20.02306265399966s: True
+[2021-10-05 13:59:52,716: INFO/ForkPoolWorker-2] Task create_task[68ce03be-6897-4215-9c54-a81d37b753c8] succeeded in 20.01681606400234s: True
+[2021-10-05 13:59:53,439: INFO/ForkPoolWorker-4] Task create_task[065828a2-d104-4058-8a34-15f93ab5b513] succeeded in 20.031369873002404s: True
+[2021-10-05 13:59:59,501: INFO/ForkPoolWorker-1] Task create_task[4b5ae36e-b764-4c23-8b0a-7099dcafa5c1] succeeded in 30.055193515996507s: True
+[2021-10-05 14:00:01,012: INFO/ForkPoolWorker-3] Task create_task[16bfccfe-4bdf-4936-a0df-8b180570f828] succeeded in 30.039214066993736s: True
+[2021-10-05 14:00:02,365: INFO/ForkPoolWorker-4] Task create_task[0284793e-06f1-45d1-9251-c11c11b2c133] succeeded in 30.039501238999947s: True
